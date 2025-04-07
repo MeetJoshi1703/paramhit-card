@@ -1,0 +1,358 @@
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f8; /* Soft light gray background */
+    color: #424242;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .card-header {
+    background-color: #3F51B5; /* Modern Indigo */
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px;
+    position: relative;
+  }
+  
+  .card-header .logo {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-header h1 {
+    margin-bottom: 5px;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  
+  .card-header .tagline {
+    font-size: 1em;
+    color: #C5CAE9; /* Lighter indigo tone */
+    margin-bottom: 15px;
+  }
+  
+  .share-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .share-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .share-button i {
+    margin-right: 5px;
+  }
+  
+  /* Sections General Styling */
+  section {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  section:last-of-type {
+    border-bottom: none;
+  }
+  
+  section h2 {
+    font-size: 1.4em;
+    color: #3F51B5; /* Use primary indigo */
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+  }
+  
+  section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #009688; /* Accent teal */
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+  
+  /* Contact Info */
+  .contact-info .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 1em;
+  }
+  
+  .contact-info .icon {
+    color: #3F51B5; /* Consistent primary color */
+    font-size: 1.2em;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .whatsapp-icon {
+    color: #25D366; /* WhatsApp Green remains */
+  }
+  
+  .contact-info a {
+    color: #424242;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: #3F51B5;
+  }
+  
+  /* Map */
+  .map-container iframe {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px 15px;
+  }
+  
+  .action-btn {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 100px;
+    padding: 12px 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #3F51B5; /* Primary indigo */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .action-btn i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .action-btn:hover {
+    background-color: #303F9F; /* Darker indigo */
+    transform: translateY(-2px);
+  }
+  
+  /* Specific Button Colours */
+  .call-btn { background-color: #4CAF50; }         /* Green */
+  .whatsapp-btn { background-color: #25D366; }     /* WhatsApp Green */
+  .email-btn { background-color: #E53935; }        /* Bold Red */
+  .location-btn { background-color: #FFB300; color: #424242; } /* Warm Amber */
+  .website-btn { background-color: #009688; }      /* Teal */
+  .save-btn { background-color: #757575; }         /* Neutral Gray */
+  
+  .call-btn:hover { background-color: #43A047; }
+  .whatsapp-btn:hover { background-color: #1E8E3E; }
+  .email-btn:hover { background-color: #D32F2F; }
+  .location-btn:hover { background-color: #FFA000; }
+  .website-btn:hover { background-color: #00796B; }
+  .save-btn:hover { background-color: #616161; }
+  
+  /* About Us */
+  .about-us p {
+    text-align: justify;
+    color: #555;
+  }
+  
+  /* Payment Section */
+  .payment-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .payment-link {
+    display: inline-block;
+    background-color: #3F51B5;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-link i {
+    margin-right: 8px;
+  }
+  
+  .payment-link:hover {
+    background-color: #303F9F;
+  }
+  
+  .qr-payment {
+    margin-top: 15px;
+  }
+  
+  .upi-qr {
+    width: 200px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Enquiry Form */
+  .enquiry-section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .enquiry-section form {
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #3F51B5;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #303F9F;
+  }
+  
+  /* Social Media */
+  .social-media {
+    text-align: center;
+  }
+  
+  .social-links a {
+    color: #3F51B5;
+    font-size: 1.8em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+  }
+  
+  .social-links a:hover {
+    color: #303F9F;
+    transform: scale(1.1);
+  }
+  
+  /* Footer */
+  .card-footer {
+    background-color: #f8f9fa;
+    color: #757575;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  
+  .powered-by a {
+    color: #3F51B5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .powered-by a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 480px) {
+    .card-header h1 {
+      font-size: 1.6em;
+    }
+    .card-header .tagline {
+      font-size: 0.9em;
+    }
+    section h2 {
+      font-size: 1.3em;
+    }
+    .contact-info .info-item {
+      font-size: 0.95em;
+    }
+    .action-btn {
+      flex: 1 1 calc(50% - 10px);
+      font-size: 0.9em;
+      padding: 10px 8px;
+    }
+    .action-btn i {
+      font-size: 1.3em;
+    }
+  }
+  

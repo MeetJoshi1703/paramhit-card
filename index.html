@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramhit Dham Adhyatmik Sankul</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Modern Color Palette */
+    :root {
+      --primary: #5D3FD3; /* Vibrant purple */
+      --primary-dark: #4A2EC1;
+      --secondary: #FF9F43; /* Warm orange */
+      --accent: #25D366; /* WhatsApp green */
+      --light: #F8F9FF;
+      --dark: #2A2D3E;
+      --text: #4A4A68;
+      --text-light: #8A8A9E;
+    }
+
+    /* Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #F8F9FF 0%, #E6E9FF 100%);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card-container {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px -12px rgba(93, 63, 211, 0.15);
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px -12px rgba(93, 63, 211, 0.2);
+    }
+
+    /* Header with Gradient */
+    .card-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      transform: rotate(30deg);
+    }
+
+    .card-header .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      background-color: white;
+      padding: 5px;
+      object-fit: contain;
+      border: 3px solid rgba(255,255,255,0.3);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      z-index: 2;
+      position: relative;
+    }
+
+    .card-header h1 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 5px;
+      font-size: 1.8em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-header .tagline {
+      font-size: 1em;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 15px;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+
+    .share-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+    }
+
+    .share-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    .share-button i {
+      margin-right: 5px;
+    }
+
+    /* Sections */
+    section {
+      padding: 25px;
+      border-bottom: 1px solid rgba(138, 138, 158, 0.1);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: var(--primary);
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      font-weight: 600;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+    /* Contact Info */
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1em;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info .info-item:hover {
+      transform: translateX(5px);
+    }
+
+    .contact-info .icon {
+      color: var(--primary);
+      font-size: 1.3em;
+      margin-right: 15px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-icon {
+      color: var(--accent);
+    }
+
+    .contact-info a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+    }
+
+    /* Map */
+    .map-container iframe {
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      height: 250px;
+    }
+
+    /* Action Buttons - Grid Layout */
+    .action-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .action-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 10px;
+      text-align: center;
+      color: white;
+      background-color: var(--primary);
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(93, 63, 211, 0.1);
+    }
+
+    .action-btn i {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(93, 63, 211, 0.15);
+    }
+
+    .action-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Button Colors */
+    .call-btn { background-color: #4CAF50; }         /* Green */
+    .whatsapp-btn { background-color: var(--accent); }     /* WhatsApp Green */
+    .email-btn { background-color: #EA4335; }        /* Google Red */
+    .location-btn { background-color: var(--secondary); } /* Warm Orange */
+    .website-btn { background-color: #4285F4; }      /* Google Blue */
+    .save-btn { background-color: var(--dark); }         /* Dark */
+
+    .call-btn:hover { background-color: #3d8b40; }
+    .whatsapp-btn:hover { background-color: #1EBE53; }
+    .email-btn:hover { background-color: #D33426; }
+    .location-btn:hover { background-color: #FF8F29; }
+    .website-btn:hover { background-color: #3367D6; }
+    .save-btn:hover { background-color: #1E202E; }
+
+    /* About Us */
+    .about-us p {
+      text-align: center;
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: 0.95em;
+    }
+
+    .about-us strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Payment Section */
+    .payment-section {
+      text-align: center;
+    }
+
+    .payment-section p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+      font-size: 0.95em;
+    }
+
+    .payment-options {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .payment-link {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.9em;
+      box-shadow: 0 4px 6px rgba(93, 63, 211, 0.1);
+    }
+
+    .payment-link i {
+      margin-right: 8px;
+      font-size: 1.2em;
+    }
+
+    .payment-link:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(93, 63, 211, 0.15);
+    }
+
+    .qr-payment {
+      margin-top: 20px;
+    }
+
+    .qr-payment p {
+      margin-bottom: 10px;
+      color: var(--text-light);
+    }
+
+    .upi-qr {
+      width: 180px;
+      height: 180px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Enquiry Form */
+    .enquiry-section {
+      text-align: center;
+    }
+
+    .enquiry-section p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 0.95em;
+    }
+
+    .enquiry-section form {
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: 0.95em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #E0E0E8;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+      background-color: #F9F9FF;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(93, 63, 211, 0.1);
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(93, 63, 211, 0.1);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(93, 63, 211, 0.15);
+    }
+
+    /* Social Media */
+    .social-media {
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      color: var(--primary);
+      font-size: 1.8em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgba(93, 63, 211, 0.05);
+    }
+
+    .social-links a:hover {
+      color: white;
+      background-color: var(--primary);
+      transform: scale(1.1) translateY(-3px);
+    }
+
+    /* Footer */
+    .card-footer {
+      background-color: var(--light);
+      color: var(--text-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85em;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      .card-header {
+        padding: 25px 15px;
+      }
+      
+      .card-header h1 {
+        font-size: 1.5em;
+      }
+      
+      section {
+        padding: 20px 15px;
+      }
+      
+      section h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+      }
+      
+      .action-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+      }
+      
+      .payment-options {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .payment-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+      <header class="card-header">
+          <img src="./images/main.jpg" alt="Paramhit Dham Logo" class="logo">
+          <h1>Paramhit Dham Adhyatmik Sankul</h1>
+          <p class="tagline">Shastriji Nayanbhai Joshi</p>
+          <button id="shareButton" class="share-button"><i class="fas fa-share-alt"></i> Share</button>
+      </header>
+
+      <section class="contact-info">
+          <h2>Contact Information</h2>
+          <div class="info-item">
+              <i class="fas fa-phone icon"></i>
+              <a href="tel:+919428762705">+91 94287 62705</a>
+          </div>
+          <div class="info-item">
+              <i class="fab fa-whatsapp icon whatsapp-icon"></i>
+              <a href="https://wa.me/919428762705" target="_blank">+91 94287 62705</a>
+          </div>
+          <div class="info-item">
+              <i class="fas fa-envelope icon"></i>
+              <a href="mailto:joshimeet479@gmail.com">joshimeet479@gmail.com</a>
+          </div>
+          <div class="info-item">
+              <i class="fas fa-globe icon"></i>
+              <a href="https://www.paramhitdham.com" target="_blank">www.paramhitdham.com</a>
+          </div>
+          <div class="info-item">
+              <i class="fas fa-map-marker-alt icon"></i>
+              <span>XCWV+WW, Chandod - Mandva Rd, Fulwadi, Gujarat 391105</span>
+          </div>
+      </section>
+
+      <section class="map-container">
+           <h2>Location</h2>
+           <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3699.373225425206!2d73.4447788!3d21.997005999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fe28b80962d95%3A0x7809f818328dd888!2z4Kqq4Kqw4Kqu4Kq54Kq_4KqkIOCqp-CqvuCqriDgqobgqqfgq43gqq_gqr7gqqTgq43gqq7gqr_gqpUg4Kq44KqC4KqV4KuB4Kqy!5e0!3m2!1sen!2sin!4v1743333490918!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </section>
+
+      <section class="action-buttons">
+           <a href="tel:+919428762705" class="action-btn call-btn"><i class="fas fa-phone"></i> Call</a>
+           <a href="https://wa.me/919428762705" target="_blank" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+           <a href="mailto:joshimeet479@gmail.com" class="action-btn email-btn"><i class="fas fa-envelope"></i> Email</a>
+           <a href="https://maps.app.goo.gl/YXfrSdTwxjghsUnY8" target="_blank" class="action-btn location-btn"><i class="fas fa-map-marker-alt"></i> Location</a>
+           <a href="https://www.paramhitdham.com" target="_blank" class="action-btn website-btn"><i class="fas fa-globe"></i> Website</a>
+           <a href="paramhitdham_contact.vcf" download="ParamhitDham.vcf" id="saveContactButton" class="action-btn save-btn"><i class="fas fa-address-card"></i> Save</a>
+      </section>
+
+      <section class="about-us">
+          <h2>About Us</h2>
+          <p>
+              Paramhit Dham is a spiritual retreat that provides a peaceful environment for meditation, self-discovery, and cultural enlightenment. Under the guidance of <strong>Shastriji Nayanbhai Joshi</strong>, we conduct various spiritual programs to help seekers find inner peace and harmony.
+          </p>
+      </section>
+
+      <!-- Payment Section -->
+      <section class="payment-section">
+          <h2>Payment Details</h2>
+          <p>You can contribute to Paramhit Dham using the following payment methods:</p>
+          <div class="payment-options">
+              <a href="https://pay.google.com/" target="_blank" class="payment-link"><i class="fab fa-google-pay"></i> Google Pay</a>
+              <a href="https://paytm.com/" target="_blank" class="payment-link"><i class="fab fa-paypal"></i> Paytm</a>
+              <a href="https://phonepe.com/" target="_blank" class="payment-link"><i class="fas fa-mobile-alt"></i> PhonePe</a>
+          </div>
+          <div class="qr-payment">
+              <p>Or scan the QR code to pay via UPI:</p>
+              <img src="./images/qr-image.jpeg" alt="UPI QR Code" class="upi-qr">
+          </div>
+      </section>
+
+      <!-- Enquiry Form Section -->
+      <section class="enquiry-section">
+          <h2>Enquiry Form</h2>
+          <p>Have any questions or inquiries? Fill out the form below, and we'll get back to you.</p>
+          <form action="https://formspree.io/f/{your_form_id}" method="POST">
+              <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>
+      </section>
+
+      <section class="social-media">
+          <h2>Connect With Us</h2>
+          <div class="social-links">
+              <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+      </section>
+
+      <footer class="card-footer">
+          <p>&copy; <span id="currentYear"></span> Paramhit Dham. All Rights Reserved.</p>
+      </footer>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Share functionality
+    document.getElementById('shareButton').addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Paramhit Dham Adhyatmik Sankul',
+          text: 'Connect with Shastriji Nayanbhai Joshi at Paramhit Dham',
+          url: window.location.href
+        }).catch(err => {
+          console.log('Error sharing:', err);
+        });
+      } else {
+        // Fallback for browsers that don't support Web Share API
+        alert('Web Share API not supported in your browser. Please copy the URL manually.');
+      }
+    });
+  </script>
+</body>
+</html>
