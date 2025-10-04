@@ -7,20 +7,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Modern Color Palette - Spiritual Theme */
+    /* Spiritual Light Cool Color Palette */
     :root {
-      --primary: #FF6B35; /* Vibrant saffron */
-      --primary-dark: #E8551C;
-      --secondary: #4A90E2; /* Peaceful blue */
+      --primary: #4f7cac; /* Peaceful blue */
+      --primary-dark: #3d6089;
+      --secondary: #87ceeb; /* Sky blue */
       --accent: #25D366; /* WhatsApp green */
-      --gold: #FFD700; /* Sacred gold */
-      --light: #FEFDF8;
-      --light-gradient: linear-gradient(135deg, #FEFDF8 0%, #FFF8E7 100%);
-      --dark: #2C1810;
-      --text: #3A2317;
-      --text-light: #8B7355;
+      --gold: #d4af37; /* Soft gold */
+      --light: #fafbfc;
+      --light-gradient: linear-gradient(135deg, #fafbfc 0%, #f0f4f8 100%);
+      --dark: #4a5568;
+      --text: #4a5568;
+      --text-light: #718096;
       --glass: rgba(255, 255, 255, 0.15);
-      --shadow: rgba(255, 107, 53, 0.12);
+      --shadow: rgba(79, 124, 172, 0.12);
     }
 
     /* Base Styles */
@@ -56,87 +56,47 @@
       border: 1px solid rgba(255, 215, 0, 0.1);
     }
 
-    /* Floating Animation */
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
 
-    .card-container:hover {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* Header with Modern Gradient */
+    /* Header with Professional Design */
     .card-header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--gold) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: white;
       text-align: center;
       padding: 40px 20px 30px;
       position: relative;
-      overflow: hidden;
     }
 
-    .card-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="lotus" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23lotus)"/></svg>');
-      opacity: 0.3;
-    }
 
     .card-header .logo {
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       margin-bottom: 20px;
       background: white;
-      padding: 8px;
+      padding: 6px;
       object-fit: cover;
-      border: 4px solid rgba(255, 215, 0, 0.4);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      z-index: 2;
+      border: 3px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .card-header .logo:hover {
-      transform: scale(1.05);
     }
 
     .card-header h1 {
-      font-family: 'Crimson Text', serif;
+      font-family: 'Inter', sans-serif;
       margin-bottom: 8px;
-      font-size: 2em;
+      font-size: 1.8em;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       position: relative;
-      z-index: 2;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .card-header .tagline {
-      font-size: 1.1em;
+      font-size: 1em;
       color: rgba(255,255,255,0.9);
       margin-bottom: 10px;
       font-weight: 400;
       position: relative;
-      z-index: 2;
     }
 
-    .spiritual-icon {
-      font-size: 1.5em;
-      margin: 0 5px;
-      opacity: 0.7;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
 
     .share-button {
       position: absolute;
@@ -284,8 +244,8 @@
     }
 
     section h2 {
-      font-family: 'Crimson Text', serif;
-      font-size: 1.6em;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5em;
       color: var(--primary);
       margin-bottom: 25px;
       text-align: center;
@@ -294,13 +254,14 @@
     }
 
     section h2::before {
-      content: '✦';
+      content: '';
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      top: -15px;
-      color: var(--gold);
-      font-size: 0.8em;
+      top: -8px;
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
     }
 
     /* Contact Cards */
@@ -311,17 +272,17 @@
     }
 
     .contact-card {
-      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(79, 124, 172, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
       border-radius: 18px;
       padding: 20px;
-      border: 1px solid rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.1);
       backdrop-filter: blur(5px);
       transition: all 0.3s ease;
     }
 
     .contact-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
     .contact-card h3 {
@@ -349,8 +310,8 @@
     }
 
     .contact-info .info-item:hover {
-      background: rgba(255, 107, 53, 0.05);
-      transform: translateX(5px);
+      background: rgba(79, 124, 172, 0.05);
+      transform: translateX(3px);
     }
 
     .contact-info .icon {
@@ -415,20 +376,6 @@
       overflow: hidden;
     }
 
-    .action-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .action-btn:hover::before {
-      left: 100%;
-    }
 
     .action-btn i {
       font-size: 1.8em;
@@ -437,21 +384,17 @@
     }
 
     .action-btn:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
-    .action-btn:hover i {
-      transform: scale(1.1);
-    }
-
-    /* Modern Button Colors */
+    /* Professional Button Colors */
     .call-btn { background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); }
     .whatsapp-btn { background: linear-gradient(135deg, var(--accent) 0%, #1EBE53 100%); }
-    .email-btn { background: linear-gradient(135deg, #EA4335 0%, #D33426 100%); }
-    .location-btn { background: linear-gradient(135deg, var(--secondary) 0%, #357ABD 100%); }
-    .website-btn { background: linear-gradient(135deg, #4285F4 0%, #3367D6 100%); }
-    .save-btn { background: linear-gradient(135deg, var(--dark) 0%, #1E202E 100%); }
+    .email-btn { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
+    .location-btn { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); }
+    .website-btn { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
+    .save-btn { background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%); }
 
     /* About Section */
     .about-us p {
@@ -470,7 +413,7 @@
     /* Payment Section */
     .payment-section {
       text-align: center;
-      background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, rgba(255, 107, 53, 0.03) 100%);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(79, 124, 172, 0.03) 100%);
       border-radius: 20px;
       margin: 0 -10px;
       padding: 30px 35px;
@@ -495,7 +438,7 @@
       font-weight: 600;
       transition: all 0.3s ease;
       font-size: 0.85em;
-      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+      box-shadow: 0 4px 15px var(--shadow);
     }
 
     .payment-link i {
@@ -504,8 +447,8 @@
     }
 
     .payment-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
     .qr-payment {
@@ -525,7 +468,7 @@
       padding: 15px;
       background: white;
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      border: 2px solid rgba(255, 215, 0, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.2);
     }
 
     /* Enquiry Form */
@@ -551,7 +494,7 @@
     .form-group textarea {
       width: 100%;
       padding: 15px 18px;
-      border: 2px solid rgba(255, 215, 0, 0.2);
+      border: 2px solid rgba(212, 175, 55, 0.2);
       border-radius: 12px;
       font-family: 'Inter', sans-serif;
       transition: all 0.3s ease;
@@ -563,8 +506,8 @@
     .form-group textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
-      transform: translateY(-2px);
+      box-shadow: 0 0 0 4px rgba(79, 124, 172, 0.1);
+      transform: translateY(-1px);
     }
 
     .submit-btn {
@@ -579,12 +522,12 @@
       font-weight: 600;
       font-size: 1em;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.2);
+      box-shadow: 0 4px 15px var(--shadow);
     }
 
     .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
     /* Social Media */
@@ -610,15 +553,15 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
-      border: 2px solid rgba(255, 215, 0, 0.2);
+      background: linear-gradient(135deg, rgba(79, 124, 172, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+      border: 2px solid rgba(212, 175, 55, 0.2);
     }
 
     .social-links a:hover {
       color: white;
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      transform: scale(1.1) translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 6px 20px var(--shadow);
     }
 
     /* Footer */
@@ -711,29 +654,15 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Loading Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Subtle Loading Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     section {
-      animation: fadeInUp 0.6s ease forwards;
+      animation: fadeIn 0.4s ease forwards;
     }
-
-    section:nth-child(2) { animation-delay: 0.1s; }
-    section:nth-child(3) { animation-delay: 0.2s; }
-    section:nth-child(4) { animation-delay: 0.3s; }
-    section:nth-child(5) { animation-delay: 0.4s; }
-    section:nth-child(6) { animation-delay: 0.5s; }
-    section:nth-child(7) { animation-delay: 0.6s; }
-    section:nth-child(8) { animation-delay: 0.7s; }
   </style>
 </head>
 <body>
@@ -832,6 +761,46 @@
           </div>
       </section>
 
+      
+      <section class="about-us">
+          <h2>About Our Spiritual Sanctuary</h2>
+          <p>
+            Embark on a spiritual odyssey at <strong>Paramhitdham Adhyatmik Sankul</strong>, nestled near the sacred Narmada River in Chandod Village. Rooted in profound Hindu values, this sanctuary hosts the magnificent <strong>Eklingji Mahadev temple</strong>, six dedicated <strong>Dhyan kutirs</strong> for meditation, and a <strong>Gaushala</strong> with 20 revered cows symbolizing purity and divine grace.
+          </p>
+          <p>
+            The <strong>Yagnashala</strong> boasts five distinct yagna kunds, creating a sacred space for diverse rituals and pujas. Our <strong>prasadalay</strong> offers pure vegetarian Indian cuisine, turning every meal into a sacrament that aligns with Hindu principles of compassion and non-violence.
+          </p>
+          <p>
+            Gather in our spacious <strong>AC satsang hall</strong> for spiritual discourse, accommodating 200 individuals, fostering community and collective enlightenment. Retreat to six comfortable AC rooms for peaceful contemplation and rest.
+          </p>
+      </section>
+
+      
+
+      <section class="payment-section">
+          <h2>Support Our Mission</h2>
+          <p>Contribute to Paramhit Dham's spiritual activities and community service</p>
+          <div class="payment-options">
+              <a href="https://pay.google.com/" target="_blank" class="payment-link">
+                  <i class="fab fa-google-pay"></i>
+                  Google Pay
+              </a>
+              <a href="https://paytm.com/" target="_blank" class="payment-link">
+                  <i class="fas fa-mobile-alt"></i>
+                  Paytm
+              </a>
+              <a href="https://phonepe.com/" target="_blank" class="payment-link">
+                  <i class="fas fa-phone"></i>
+                  PhonePe
+              </a>
+          </div>
+          <div class="qr-payment">
+              <p><strong>Scan QR Code for UPI Payment</strong></p>
+              <img src="./images/qr-imagee.jpeg" alt="UPI QR Code" class="upi-qr">
+          </div>
+      </section>
+
+
       <section class="contact-info">
           <h2>Contact Information</h2>
           <div class="contact-cards">
@@ -869,10 +838,10 @@
           </div>
           
           <div class="contact-card">
-              <div class="info-item">
+              <!-- <div class="info-item">
                   <i class="fas fa-globe icon"></i>
                   <a href="https://www.paramhitdham.com" target="_blank">www.paramhitdham.com</a>
-              </div>
+              </div> -->
               <div class="info-item">
                   <i class="fas fa-map-marker-alt icon"></i>
                   <span>XCWV+WW, Chandod - Mandva Rd, Fulwadi, Gujarat 391105</span>
@@ -893,50 +862,14 @@
           </iframe>
       </section>
 
-      <section class="action-buttons">
+      <!-- <section class="action-buttons">
            <a href="tel:+919428762705" class="action-btn call-btn"><i class="fas fa-phone"></i> Call</a>
            <a href="https://wa.me/919428762705" target="_blank" class="action-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
            <a href="mailto:paramhittrust@yahoo.com" class="action-btn email-btn"><i class="fas fa-envelope"></i> Email</a>
            <a href="https://maps.app.goo.gl/YXfrSdTwxjghsUnY8" target="_blank" class="action-btn location-btn"><i class="fas fa-map-marker-alt"></i> Location</a>
            <a href="https://www.paramhitdham.com" target="_blank" class="action-btn website-btn"><i class="fas fa-globe"></i> Website</a>
            <a href="paramhitdham_contact.vcf" download="ParamhitDham.vcf" id="saveContactButton" class="action-btn save-btn"><i class="fas fa-address-card"></i> Save</a>
-      </section>
-
-      <section class="about-us">
-          <h2>About Our Spiritual Sanctuary</h2>
-          <p>
-            Embark on a spiritual odyssey at <strong>Paramhitdham Adhyatmik Sankul</strong>, nestled near the sacred Narmada River in Chandod Village. Rooted in profound Hindu values, this sanctuary hosts the magnificent <strong>Eklingji Mahadev temple</strong>, six dedicated <strong>Dhyan kutirs</strong> for meditation, and a <strong>Gaushala</strong> with 20 revered cows symbolizing purity and divine grace.
-          </p>
-          <p>
-            The <strong>Yagnashala</strong> boasts five distinct yagna kunds, creating a sacred space for diverse rituals and pujas. Our <strong>prasadalay</strong> offers pure vegetarian Indian cuisine, turning every meal into a sacrament that aligns with Hindu principles of compassion and non-violence.
-          </p>
-          <p>
-            Gather in our spacious <strong>AC satsang hall</strong> for spiritual discourse, accommodating 200 individuals, fostering community and collective enlightenment. Retreat to six comfortable AC rooms for peaceful contemplation and rest.
-          </p>
-      </section>
-
-      <section class="payment-section">
-          <h2>Support Our Mission</h2>
-          <p>Contribute to Paramhit Dham's spiritual activities and community service</p>
-          <div class="payment-options">
-              <a href="https://pay.google.com/" target="_blank" class="payment-link">
-                  <i class="fab fa-google-pay"></i>
-                  Google Pay
-              </a>
-              <a href="https://paytm.com/" target="_blank" class="payment-link">
-                  <i class="fas fa-mobile-alt"></i>
-                  Paytm
-              </a>
-              <a href="https://phonepe.com/" target="_blank" class="payment-link">
-                  <i class="fas fa-phone"></i>
-                  PhonePe
-              </a>
-          </div>
-          <div class="qr-payment">
-              <p><strong>Scan QR Code for UPI Payment</strong></p>
-              <img src="./images/qr-imagee.jpeg" alt="UPI QR Code" class="upi-qr">
-          </div>
-      </section>
+      </section> -->
 
       <section class="enquiry-section">
           <h2>Get In Touch</h2>
@@ -981,7 +914,7 @@
 
       <footer class="card-footer">
           <p>&copy; <span id="currentYear"></span> Paramhit Dham Adhyatmik Sankul. All Rights Reserved.</p>
-          <p style="margin-top: 8px; font-size: 0.8em; opacity: 0.9;">🕉️ May peace and prosperity be with you 🕉️</p>
+          <p style="margin-top: 8px; font-size: 0.8em; opacity: 0.9;">May peace and prosperity be with you</p>
       </footer>
   </div>
 
